@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+/* Refactor code to look like this */
+/* This file is for your main application CSS */
+.card {
+  @apply p-4 bg-blue-200 text-blue-800 rounded-lg;
+
+  & .title {
+    @apply text-3xl tracking-tight font-bold;
+  }
+
+  & .description {
+    @apply pt-4 text-lg font-medium;
+
+    & a {
+      @apply underline text-blue-600;
+    }
+  }
+}
+
+body {
+  @apply antialiased relative bg-slate-200 font-sans;
+}
+
+nav {
+  @apply py-3 px-6 flex justify-end;
+}
+
+nav ul {
+  @apply flex items-center justify-between gap-4;
+}
+
+nav ul li {
+  @apply text-base text-slate-700;
+}
+
+nav ul li a:hover {
+  @apply underline;
+}
+
+main {
+  @apply max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8;
+}
+
+h1 {
+  @apply text-center text-slate-900 font-extrabold text-3xl;
+}
+
+h2 {
+  @apply text-center text-slate-800 font-extrabold text-2xl;
+}
+
+h3 {
+  @apply text-center text-slate-800 font-bold text-xl;
+}
+
+/* Light */
+
+#light {
+  @apply mt-8 max-w-xl mx-auto text-center;
+}
+#light button {
+  @apply bg-transparent mx-1 py-2 px-4 border-slate-400 border-2 rounded-lg shadow-sm transition ease-in-out duration-150 outline-none hover:bg-slate-300 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+#light img,
+#light svg {
+  @apply w-8;
+}
+#light .meter {
+  @apply flex h-12 overflow-hidden text-base bg-slate-300 rounded-lg mb-8;
+}
+#light .meter > span {
+  @apply flex flex-col justify-center text-slate-900 text-center whitespace-nowrap bg-yellow-300 font-bold w-0;
+  transition: width 2s ease;
+}
+#light form {
+  @apply mt-10;
+}
+#light form .temps {
+  @apply flex justify-center items-center space-y-0 space-x-10;
+}
+#light form .temps > div {
+  @apply flex items-center;
+}
+#light form .temps > div input {
+  @apply h-4 w-4 border-slate-300 text-slate-600 focus:ring-slate-500;
+}
+#light form .temps > div label {
+  @apply ml-2 block text-sm font-bold text-slate-700;
+}
+
+/* Sandbox Calculator */
+
+#sandbox {
+  @apply mt-8 max-w-lg mx-auto;
+}
+#sandbox form {
+  @apply mx-auto mb-6 p-6 border border-slate-300 rounded-lg shadow-lg bg-white text-center;
+}
+#sandbox form .fields {
+  @apply flex items-baseline justify-center space-x-4 mb-6;
+}
+#sandbox form .fields label {
+  @apply block text-sm font-semibold text-slate-700;
+}
+#sandbox form .fields input[type="number"] {
+  @apply focus:ring-indigo-300 focus:border-indigo-300 block w-full min-w-0 pl-6 pr-16 text-sm border-slate-300 rounded-md transition duration-150 ease-in-out appearance-none;
+}
+#sandbox form .fields .input {
+  @apply mt-1 relative rounded-md shadow-sm;
+}
+#sandbox form .fields .unit {
+  @apply absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-500 text-sm;
+}
+#sandbox form .weight {
+  @apply mt-4 block text-base font-bold text-slate-700;
+}
+#sandbox form button {
+  @apply py-2 px-4 mt-6 border border-transparent font-semibold text-base rounded-md text-white bg-green-500 transition duration-150 ease-in-out outline-none hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500;
+}
+#sandbox .quote {
+  @apply text-center p-6 border-4 border-dotted border-green-600 text-xl font-semibold text-green-600;
+}
